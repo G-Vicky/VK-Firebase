@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "251543575784",
+    "project_id": "vkfirebase7274",
+    "storage_bucket": "vkfirebase7274.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251543575784:android:e16358aabf2b8cf0167d5d",
+        "android_client_info": {
+          "package_name": "com.vkapps.vkfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251543575784-iai6nbvb6qvp97q4absmn1s6aaelh5n3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vkapps.vkfirebase",
+            "certificate_hash": "b301365b2492cb7aad1b25c525db4a550f23abd6"
+          }
+        },
+        {
+          "client_id": "251543575784-naelfpao7e3df6587hcbfjs1jqo7nuat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoXB41F3GRpL8rtyKE5Ax7SvoEbdjVn2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251543575784-naelfpao7e3df6587hcbfjs1jqo7nuat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
