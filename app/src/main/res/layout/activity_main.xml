@@ -24,39 +24,42 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
         <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email Address">
+                android:hint="Email Address"
+                app:startIconDrawable="@drawable/ic_email"
+                app:boxStrokeColor="@color/link_text"
+                app:hintTextColor="@color/link_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
             <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="54sp"
-                    android:gravity="center"
                     android:inputType="textEmailAddress"
                     android:textSize="21sp"
             />
 
         </com.google.android.material.textfield.TextInputLayout>
-        <EditText
-                android:id="@+id/emailAddress"
+        <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="54sp"
-                android:gravity="center"
-                android:inputType="textEmailAddress"
-                android:hint="example@abc.com"
-                android:textSize="21sp"
-        />
-        <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="54sp"
-                android:gravity="center"
-                android:inputType="textPassword"
+                android:layout_height="wrap_content"
                 android:hint="password"
-                android:fontFamily="monospace"
-                android:textSize="21sp"
-        />
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:boxStrokeColor="@color/link_text"
+                app:hintTextColor="@color/link_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="54sp"
+                    android:inputType="textPassword"
+                    android:textSize="21sp"
+            />
+
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <LinearLayout
             android:layout_width="match_parent"
@@ -71,13 +74,14 @@
                 android:text="@string/google_sign_up"
                 app:isDarkTheme="true"
                 android:onClick="signInWithGoogle"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="54sp"
+                android:layout_height="64sp"
                 android:text="SignIn"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/btn_bg"
                 android:layout_margin="9sp"
-                android:background="@color/btn_bg"
                 android:onClick="signInWithEmail"
         />
     </LinearLayout>
