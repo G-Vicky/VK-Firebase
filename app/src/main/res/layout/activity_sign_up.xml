@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:startIconDrawable="@drawable/ic_email"
-                android:hint="email"
+                android:hint="email address"
                 app:boxStrokeColor="@color/link_text"
                 app:hintTextColor="@color/link_text"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

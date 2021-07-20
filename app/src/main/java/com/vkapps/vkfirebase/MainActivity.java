@@ -22,10 +22,14 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.*;
+import com.google.firebase.database.FirebaseDatabase;
+import com.vkapps.vkfirebase.firebase.FirebaseDBHelper;
+import com.vkapps.vkfirebase.firebase.User;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+    FirebaseDBHelper database;
     private GoogleSignInClient mGoogleSignInClient;
     EditText emailAddressInput;
     EditText passwordInput;
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        database = new FirebaseDBHelper();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -92,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
+                            if(user != null) {
+                                User newUser = new User(user.getUid(), user.getDisplayName(), user.getEmail());
+                                database.addNewUser(newUser);
+                            }
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             finish();
                         } else {

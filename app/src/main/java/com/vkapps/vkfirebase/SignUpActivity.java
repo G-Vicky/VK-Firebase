@@ -13,10 +13,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.vkapps.vkfirebase.firebase.FirebaseDBHelper;
+import com.vkapps.vkfirebase.firebase.User;
 
 public class SignUpActivity extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
+    FirebaseDBHelper database;
     EditText usernameInput;
     EditText emailAddressInput;
     EditText passwordInput;
@@ -27,7 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
+        database = new FirebaseDBHelper();
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();           // get current user info
         if(currentUser != null) {                                           //move to homepage if user already signed in
             Toast.makeText(this, "user already logged in", Toast.LENGTH_SHORT).show();
@@ -51,6 +56,10 @@ public class SignUpActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
+                    if(user != null) {
+                        User newUser = new User(user.getUid(), getUsername(), user.getEmail());
+                        database.addNewUser(newUser);
+                    }
                     Toast.makeText(SignUpActivity.this, "signed up successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(SignUpActivity.this, HomeActivity.class));
                     finish();
