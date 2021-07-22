@@ -1,9 +1,12 @@
 package com.vkapps.vkfirebase.firebase;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 public class User {
-    String username;
-    String emailAddress;
-    String UID;
+    private String username;
+    private String emailAddress;
+    private String UID;
 
     public User() {}
 

@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             if(user != null) {
-                                User newUser = new User(user.getUid(), user.getDisplayName(), user.getEmail());
+                                User newUser = new User(user.getDisplayName(), user.getEmail(), user.getUid());
                                 database.addNewUser(newUser);
                             }
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
