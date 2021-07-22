@@ -58,7 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
-//        otpLayout.setVisibility(View.GONE);
+        otpLayout.setVisibility(View.GONE);
 
         fillUserDetails();
     }
@@ -131,6 +131,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void sendOTP(View view) {
+        otpLayout.setVisibility(View.VISIBLE);
         if(!isValidPhoneNumber()) {
             return;
         }
