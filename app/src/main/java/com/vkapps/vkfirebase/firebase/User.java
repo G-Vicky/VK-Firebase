@@ -7,6 +7,7 @@ public class User {
     private String username;
     private String emailAddress;
     private String UID;
+    private String phoneNumber;
 
     public User() {}
 
@@ -14,6 +15,13 @@ public class User {
         this.username = username;
         this.emailAddress = emailAddress;
         this.UID = UID;
+    }
+
+    public User(String username, String emailAddress, String UID, String phoneNumber) {
+        this.username = username;
+        this.emailAddress = emailAddress;
+        this.UID = UID;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getUsername() {
@@ -38,6 +46,14 @@ public class User {
 
     public void setUID(String UID) {
         this.UID = UID;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override

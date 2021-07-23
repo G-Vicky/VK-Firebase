@@ -98,12 +98,22 @@
                 android:onClick="sendVerifyMail"
         />
         <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendOTPBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/btn_bg"
                 android:text="send otp"
                 android:textColor="@color/black"
                 android:onClick="sendOTP"
+        />
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/resendOTPBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/btn_bg"
+                android:text="re-send otp"
+                android:textColor="@color/black"
+                android:onClick="resendOTP"
         />
     </LinearLayout>
     <LinearLayout

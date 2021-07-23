@@ -40,4 +40,9 @@ public class FirebaseDBHelper {
         return user;
     }
 
+    public boolean updatePhoneNumber(String UID, String phoneNumber) {
+        userRef.child(UID).child("phoneNumber").setValue(phoneNumber);
+        return true;
+    }
+
 }
