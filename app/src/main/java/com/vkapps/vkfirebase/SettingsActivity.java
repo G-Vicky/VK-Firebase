@@ -111,7 +111,7 @@ public class SettingsActivity extends AppCompatActivity {
                     usernameInput.setEnabled(false);
                     emailAddressInput.setText(user.getEmailAddress());
                     emailAddressInput.setEnabled(false);
-                    if(user.getPhoneNumber().length() > 3) {
+                    if(user.getPhoneNumber() != null && user.getPhoneNumber().length() > 3) {
                         phoneNoInput.setText(user.getPhoneNumber());
                         phoneNoInput.setEnabled(false);
                         sendOTPBtn.setVisibility(View.GONE);
